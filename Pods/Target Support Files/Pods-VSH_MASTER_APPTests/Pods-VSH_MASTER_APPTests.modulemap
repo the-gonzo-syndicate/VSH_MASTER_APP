@@ -1,0 +1,6 @@
+framework module Pods_VSH_MASTER_APPTests {
+  umbrella header "Pods-VSH_MASTER_APPTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
