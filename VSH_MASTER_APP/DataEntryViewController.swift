@@ -7,16 +7,65 @@
 //
 
 import UIKit
+import Parse
 
-class DataEntryViewController: UIViewController {
+class DataEntryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    
+    
+    
+    @IBOutlet weak var huntPicker: UIPickerView!
+    
+    var hunts = [PFObject]()
+    
+    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        huntPicker.delegate = self
+        huntPicker.dataSource = self
+        
 
         // Do any additional setup after loading the view.
     }
     
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let query = PFQuery(className: "Hunt")
+        query.includeKeys(["huntName"])
+        query.findObjectsInBackground { (hunts, error) in
+            
+            if hunts != nil {
+                self.hunts = hunts!
+                self.huntPicker.reloadAllComponents()
+                print(hunts)
+            }
+            self.huntPicker.reloadAllComponents()
+        }
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return hunts.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        //var huntTitles = [String]()
+        
+        
+        
+        //let huntTitle = hunts.huntName[row] as? String
+        
+        return "blah" //self.hunts[row]
+    }
     /*
     // MARK: - Navigation
 
