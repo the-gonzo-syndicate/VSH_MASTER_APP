@@ -17,6 +17,8 @@
 		49846E3B2248833200545A05 /* VSH_MASTER_APPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49846E3A2248833200545A05 /* VSH_MASTER_APPUITests.swift */; };
 		49846E49224896C500545A05 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49846E48224896C500545A05 /* LoginViewController.swift */; };
 		49846E4B224896F600545A05 /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49846E4A224896F600545A05 /* DataEntryViewController.swift */; };
+		49DD5919224ADA7B00E4C651 /* DataEntry2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD5918224ADA7B00E4C651 /* DataEntry2ViewController.swift */; };
+		49DD591B224B0A4B00E4C651 /* DataCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD591A224B0A4B00E4C651 /* DataCollectionViewController.swift */; };
 		F514E97D04E971CA3FB72346 /* Pods_VSH_MASTER_APPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17622DADA4CC75BEF12FD10C /* Pods_VSH_MASTER_APPTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		49846E3C2248833200545A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49846E48224896C500545A05 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		49846E4A224896F600545A05 /* DataEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
+		49DD5918224ADA7B00E4C651 /* DataEntry2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntry2ViewController.swift; sourceTree = "<group>"; };
+		49DD591A224B0A4B00E4C651 /* DataCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewController.swift; sourceTree = "<group>"; };
 		9DABB45850D20237BFC9EB75 /* Pods-VSH_MASTER_APPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VSH_MASTER_APPTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VSH_MASTER_APPTests/Pods-VSH_MASTER_APPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1DDDBF4900D4DE3AB9A700B /* Pods-VSH_MASTER_APPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VSH_MASTER_APPTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VSH_MASTER_APPTests/Pods-VSH_MASTER_APPTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1448E5154E9FA96B46E8AF8 /* Pods_VSH_MASTER_APPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VSH_MASTER_APPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +127,8 @@
 				49846E262248833100545A05 /* Info.plist */,
 				49846E48224896C500545A05 /* LoginViewController.swift */,
 				49846E4A224896F600545A05 /* DataEntryViewController.swift */,
+				49DD5918224ADA7B00E4C651 /* DataEntry2ViewController.swift */,
+				49DD591A224B0A4B00E4C651 /* DataCollectionViewController.swift */,
 			);
 			path = VSH_MASTER_APP;
 			sourceTree = "<group>";
@@ -402,7 +408,9 @@
 			files = (
 				49846E49224896C500545A05 /* LoginViewController.swift in Sources */,
 				49846E4B224896F600545A05 /* DataEntryViewController.swift in Sources */,
+				49DD5919224ADA7B00E4C651 /* DataEntry2ViewController.swift in Sources */,
 				49846E1B2248832400545A05 /* AppDelegate.swift in Sources */,
+				49DD591B224B0A4B00E4C651 /* DataCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

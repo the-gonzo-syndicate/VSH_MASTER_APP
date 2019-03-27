@@ -75,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jm-5c-kQh">
-                                <rect key="frame" x="5" y="181" width="365" height="206"/>
+                                <rect key="frame" x="5" y="137" width="365" height="250"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DoJ-nN-T5z" userLabel="Hunt Picker View">
                                         <rect key="frame" x="0.0" y="0.0" width="365" height="206"/>
@@ -87,7 +87,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose The Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVY-e4-Xth">
-                                <rect key="frame" x="120" y="132" width="134" height="21"/>
+                                <rect key="frame" x="120" y="88" width="134" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.91135759770000002" green="1" blue="0.30964010809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -97,6 +97,10 @@
                                 <state key="normal" title="Select">
                                     <color key="titleColor" red="1" green="0.26829246379999999" blue="0.1432460197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSelect:" destination="Zrf-lD-cUJ" eventType="touchUpInside" id="gHG-VC-i2l"/>
+                                    <segue destination="NRK-ww-KBP" kind="presentation" identifier="huntToStopSegue" id="GUv-ay-jrG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,6 +127,142 @@
             </objects>
             <point key="canvasLocation" x="1336.8" y="133.5832083958021"/>
         </scene>
+        <!--Data Entry2 View Controller-->
+        <scene sceneID="4pw-9E-Ake">
+            <objects>
+                <viewController id="NRK-ww-KBP" customClass="DataEntry2ViewController" customModule="VSH_MASTER_APP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dIV-PJ-xo6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose The Stop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zc-vj-fbp">
+                                <rect key="frame" x="121" y="36" width="133" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.91135759770000002" green="1" blue="0.30964010809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Fj-gj-Wtj">
+                                <rect key="frame" x="165" y="437" width="44" height="30"/>
+                                <state key="normal" title="Select">
+                                    <color key="titleColor" red="1" green="0.26829246379999999" blue="0.1432460197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSelect:" destination="NRK-ww-KBP" eventType="touchUpInside" id="f9e-L2-cc6"/>
+                                    <segue destination="X33-Ej-hjw" kind="presentation" identifier="stopToCaptureSegue" id="Ta6-Ie-cPg"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xTk-Dm-3d6">
+                                <rect key="frame" x="5" y="83" width="365" height="262"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WNS-60-9cv">
+                                        <rect key="frame" x="0.0" y="2" width="365" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZO-wv-AnT">
+                                <rect key="frame" x="169" y="489" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="1" green="0.26829246379999999" blue="0.1432460197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBack:" destination="NRK-ww-KBP" eventType="touchUpInside" id="D66-ZJ-fUk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h2F-AG-Ogz" firstAttribute="trailing" secondItem="1Fj-gj-Wtj" secondAttribute="trailing" constant="166" id="4lu-LJ-crI"/>
+                            <constraint firstItem="xTk-Dm-3d6" firstAttribute="leading" secondItem="h2F-AG-Ogz" secondAttribute="leading" constant="5" id="8H0-Vm-8IE"/>
+                            <constraint firstItem="h2F-AG-Ogz" firstAttribute="trailing" secondItem="1zc-vj-fbp" secondAttribute="trailing" constant="121" id="Ap5-yZ-HXp"/>
+                            <constraint firstItem="1Fj-gj-Wtj" firstAttribute="top" secondItem="xTk-Dm-3d6" secondAttribute="bottom" constant="92" id="MD3-qM-bJK"/>
+                            <constraint firstItem="h2F-AG-Ogz" firstAttribute="trailing" secondItem="xTk-Dm-3d6" secondAttribute="trailing" constant="5" id="fBP-Nv-MmY"/>
+                            <constraint firstItem="1Fj-gj-Wtj" firstAttribute="leading" secondItem="h2F-AG-Ogz" secondAttribute="leading" constant="165" id="h8L-nW-XdI"/>
+                            <constraint firstItem="1zc-vj-fbp" firstAttribute="top" secondItem="h2F-AG-Ogz" secondAttribute="top" constant="16" id="iop-DU-QuD"/>
+                            <constraint firstItem="h2F-AG-Ogz" firstAttribute="bottom" secondItem="1Fj-gj-Wtj" secondAttribute="bottom" constant="200" id="mmM-ck-83a"/>
+                            <constraint firstItem="xTk-Dm-3d6" firstAttribute="top" secondItem="1zc-vj-fbp" secondAttribute="bottom" constant="26" id="p9L-L6-l2n"/>
+                            <constraint firstItem="1zc-vj-fbp" firstAttribute="leading" secondItem="h2F-AG-Ogz" secondAttribute="leading" constant="121" id="vlz-46-pmb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h2F-AG-Ogz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OfS-Hs-jOD">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="KKL-Aq-HVR">
+                            <color key="tintColor" red="0.91135759770000002" green="1" blue="0.30964010809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="stopPickerView" destination="WNS-60-9cv" id="gIK-H5-8dL"/>
+                        <segue destination="Zrf-lD-cUJ" kind="presentation" identifier="stopToHuntSegue" id="I35-Wg-fVL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a6H-Rc-IQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2125.5999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--DataCollectionViewController-->
+        <scene sceneID="muP-1o-PIo">
+            <objects>
+                <viewController id="X33-Ej-hjw" userLabel="DataCollectionViewController" customClass="DataCollectionViewController" customModule="VSH_MASTER_APP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UZa-mL-3u1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Capture The Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otI-vc-228">
+                                <rect key="frame" x="119" y="20" width="136" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.91135759770000002" green="1" blue="0.30964010809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw5-gd-00W">
+                                <rect key="frame" x="161" y="432" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Preview">
+                                    <color key="titleColor" red="1" green="0.26829246379999999" blue="0.1432460197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPreview:" destination="X33-Ej-hjw" eventType="touchUpInside" id="8Rt-Ed-9tB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozy-Ur-IV5">
+                                <rect key="frame" x="170" y="480" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="1" green="0.26829246379999999" blue="0.1432460197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBack:" destination="X33-Ej-hjw" eventType="touchUpInside" id="nMl-ez-dKU"/>
+                                    <segue destination="NRK-ww-KBP" kind="presentation" identifier="captureToStopSegue" id="HI2-Bh-dbE"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cameraPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="T2i-24-xMr">
+                                <rect key="frame" x="16" y="57" width="343" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ze8-t6-4lb" appends="YES" id="kfS-pL-mMy"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="su0-8h-FY8"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="T2i-24-xMr" id="Jsj-LY-eUq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hzg-hx-emz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ze8-t6-4lb">
+                    <connections>
+                        <action selector="onCameraButton:" destination="X33-Ej-hjw" id="iqC-2O-YmA"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2829.5999999999999" y="134.48275862068968"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FaK-F4-6KN">
             <objects>
@@ -143,4 +283,11 @@
             <point key="canvasLocation" x="540" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cameraPlaceholder" width="82.319999694824219" height="61"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="HI2-Bh-dbE"/>
+        <segue reference="I35-Wg-fVL"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -17,8 +17,10 @@ class DataEntryViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBOutlet weak var huntPicker: UIPickerView!
     
+    
     var hunts = [PFObject]()
     
+    var selectedHunt: String?
     
 
     
@@ -56,16 +58,40 @@ class DataEntryViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         return hunts.count
     }
     
+    
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        //var huntTitles = [String]()
         
+        huntPicker.setValue(UIColor.white, forKey: "textColor")
+        selectedHunt = hunts[row]["huntName"] as? String
         
-        
-        //let huntTitle = hunts.huntName[row] as? String
-        
-        return "blah" //self.hunts[row]
+        return hunts[row]["huntName"] as? String
     }
+    
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //    if segue.destination is DataEntry2ViewController {
+    //        let searchedHunt = segue.destination as? DataEntry2ViewController
+    //        searchedHunt.name = hunts[row]["huntName"] as? String
+    //    }
+    //}
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedHunt = hunts[row]["huntName"] as? String
+    }
+    
+    
+    @IBAction func onSelect(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "huntToStopSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! DataEntry2ViewController
+        vc.huntNameSelection = selectedHunt!
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 
