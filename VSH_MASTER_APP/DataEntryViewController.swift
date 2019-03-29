@@ -27,10 +27,11 @@ class DataEntryViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         huntPicker.delegate = self
         huntPicker.dataSource = self
-        
-
+        huntPicker.setValue(UIColor.white, forKey: "textColor")
         // Do any additional setup after loading the view.
     }
     
@@ -63,7 +64,7 @@ class DataEntryViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         
-        huntPicker.setValue(UIColor.white, forKey: "textColor")
+        //huntPicker.setValue(UIColor.white, forKey: "textColor")
         selectedHunt = hunts[row]["huntName"] as? String
         
         return hunts[row]["huntName"] as? String

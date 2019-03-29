@@ -211,24 +211,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Capture The Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otI-vc-228">
-                                <rect key="frame" x="119" y="20" width="136" height="21"/>
+                                <rect key="frame" x="120" y="20" width="136" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.91135759770000002" green="1" blue="0.30964010809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw5-gd-00W">
-                                <rect key="frame" x="161" y="432" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Preview">
-                                    <color key="titleColor" red="1" green="0.26829246379999999" blue="0.1432460197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="onPreview:" destination="X33-Ej-hjw" eventType="touchUpInside" id="8Rt-Ed-9tB"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozy-Ur-IV5">
-                                <rect key="frame" x="170" y="480" width="34" height="30"/>
+                                <rect key="frame" x="170" y="593" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="1" green="0.26829246379999999" blue="0.1432460197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -246,6 +236,17 @@
                                     <outletCollection property="gestureRecognizers" destination="Ze8-t6-4lb" appends="YES" id="kfS-pL-mMy"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjq-tR-H44">
+                                <rect key="frame" x="166" y="518" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select">
+                                    <color key="titleColor" red="0.92266991970000001" green="0.39059684309999998" blue="0.28258622189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSelect:" destination="X33-Ej-hjw" eventType="touchUpInside" id="Ec5-G2-KWy"/>
+                                    <segue destination="mH4-Xt-4SE" kind="presentation" identifier="captureToMapSegue" id="t0t-mu-Tcu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="su0-8h-FY8"/>
@@ -262,6 +263,114 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2829.5999999999999" y="134.48275862068968"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="fta-d4-sqh">
+            <objects>
+                <viewController id="mH4-Xt-4SE" customClass="MapViewController" customModule="VSH_MASTER_APP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v2j-dC-hdR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jFn-me-v5F">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="528"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPm-ap-bq9">
+                                <rect key="frame" x="114" y="558" width="146" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Capture GeoLocation">
+                                    <color key="titleColor" red="0.92266991970000001" green="0.39059684309999998" blue="0.28258622189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCaptureGeo:" destination="mH4-Xt-4SE" eventType="touchUpInside" id="1sz-OP-zNX"/>
+                                    <segue destination="4Ie-DX-V4S" kind="presentation" identifier="mapToPreviewSegue" id="7xL-7Z-7h9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkO-hH-ijU">
+                                <rect key="frame" x="170" y="605" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.92266991970000001" green="0.39059684309999998" blue="0.28258622189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBack:" destination="mH4-Xt-4SE" eventType="touchUpInside" id="6dF-Kd-B34"/>
+                                    <segue destination="X33-Ej-hjw" kind="presentation" identifier="mapToCollectionSegue" id="ch9-HT-hVs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vi2-fj-Hv3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6r-gr-4NW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3640.8000000000002" y="136.28185907046478"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="Kk7-eC-the">
+            <objects>
+                <viewController id="4Ie-DX-V4S" customClass="PreviewViewController" customModule="VSH_MASTER_APP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bmc-8v-3hG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJl-qa-NzS">
+                                <rect key="frame" x="160" y="533" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" red="0.92266991970000001" green="0.39059684309999998" blue="0.28258622189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="onConfirm:" destination="4Ie-DX-V4S" eventType="touchUpInside" id="L8G-gq-JUU"/>
+                                    <segue destination="Zrf-lD-cUJ" kind="presentation" identifier="previewToHuntSegue" id="j2v-SD-OnO"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cameraPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ghm-Ru-DJ0">
+                                <rect key="frame" x="16" y="20" width="343" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stop Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOz-Oh-ckl">
+                                <rect key="frame" x="16" y="323" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.92266991970000001" green="0.39059684309999998" blue="0.28258622189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="theName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzG-E9-cVw">
+                                <rect key="frame" x="210" y="323" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.92266991970000001" green="0.39059684309999998" blue="0.28258622189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coordinates Collected: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5W-W3-7VW">
+                                <rect key="frame" x="16" y="363" width="180" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.92266991970000001" green="0.39059684309999998" blue="0.28258622189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhf-4e-L44">
+                                <rect key="frame" x="210" y="363" width="22" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.92266991970000001" green="0.39059684309999998" blue="0.28258622189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="GeF-MB-GRw"/>
+                    </view>
+                    <connections>
+                        <outlet property="coordsCollectedLabel" destination="Lhf-4e-L44" id="TNI-VE-b36"/>
+                        <outlet property="previewImageView" destination="Ghm-Ru-DJ0" id="JBF-mM-sLn"/>
+                        <outlet property="stopNameLabel" destination="UzG-E9-cVw" id="Mp1-Ks-mlH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uzw-dU-SQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4468" y="136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FaK-F4-6KN">
@@ -284,9 +393,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cameraPlaceholder" width="82.319999694824219" height="61"/>
+        <image name="cameraPlaceholder" width="343" height="254"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Ta6-Ie-cPg"/>
         <segue reference="HI2-Bh-dbE"/>
         <segue reference="I35-Wg-fVL"/>
     </inferredMetricsTieBreakers>

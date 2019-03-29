@@ -19,6 +19,8 @@
 		49846E4B224896F600545A05 /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49846E4A224896F600545A05 /* DataEntryViewController.swift */; };
 		49DD5919224ADA7B00E4C651 /* DataEntry2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD5918224ADA7B00E4C651 /* DataEntry2ViewController.swift */; };
 		49DD591B224B0A4B00E4C651 /* DataCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD591A224B0A4B00E4C651 /* DataCollectionViewController.swift */; };
+		E906DA88224DB7B5007CD478 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906DA87224DB7B5007CD478 /* MapViewController.swift */; };
+		E906DA8A224DBC12007CD478 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906DA89224DBC12007CD478 /* PreviewViewController.swift */; };
 		F514E97D04E971CA3FB72346 /* Pods_VSH_MASTER_APPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17622DADA4CC75BEF12FD10C /* Pods_VSH_MASTER_APPTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		CBB532D19C3F617CAFBFF1FD /* Pods-VSH_MASTER_APPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VSH_MASTER_APPUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VSH_MASTER_APPUITests/Pods-VSH_MASTER_APPUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC3E7CFF4D2DB0C1F39B438B /* Pods-VSH_MASTER_APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VSH_MASTER_APP.release.xcconfig"; path = "Pods/Target Support Files/Pods-VSH_MASTER_APP/Pods-VSH_MASTER_APP.release.xcconfig"; sourceTree = "<group>"; };
 		E74FA43853252F74A62D34DD /* Pods_VSH_MASTER_APP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VSH_MASTER_APP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E906DA87224DB7B5007CD478 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E906DA89224DBC12007CD478 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		F85530A9640E5060B8C40194 /* Pods-VSH_MASTER_APPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VSH_MASTER_APPUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VSH_MASTER_APPUITests/Pods-VSH_MASTER_APPUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,8 @@
 				49846E4A224896F600545A05 /* DataEntryViewController.swift */,
 				49DD5918224ADA7B00E4C651 /* DataEntry2ViewController.swift */,
 				49DD591A224B0A4B00E4C651 /* DataCollectionViewController.swift */,
+				E906DA87224DB7B5007CD478 /* MapViewController.swift */,
+				E906DA89224DBC12007CD478 /* PreviewViewController.swift */,
 			);
 			path = VSH_MASTER_APP;
 			sourceTree = "<group>";
@@ -407,6 +413,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				49846E49224896C500545A05 /* LoginViewController.swift in Sources */,
+				E906DA88224DB7B5007CD478 /* MapViewController.swift in Sources */,
+				E906DA8A224DBC12007CD478 /* PreviewViewController.swift in Sources */,
 				49846E4B224896F600545A05 /* DataEntryViewController.swift in Sources */,
 				49DD5919224ADA7B00E4C651 /* DataEntry2ViewController.swift in Sources */,
 				49846E1B2248832400545A05 /* AppDelegate.swift in Sources */,

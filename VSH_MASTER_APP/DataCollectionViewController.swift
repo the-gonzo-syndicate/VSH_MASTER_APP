@@ -29,7 +29,7 @@ class DataCollectionViewController: UIViewController, UIImagePickerControllerDel
 
     
     @IBAction func onPreview(_ sender: Any) {
-        print(stopNameSelection)
+        self.performSegue(withIdentifier: "captureToPreviewSegue", sender: self)
     }
     
     
@@ -63,6 +63,16 @@ class DataCollectionViewController: UIViewController, UIImagePickerControllerDel
         self.performSegue(withIdentifier: "captureToStopSegue", sender: self)
         
     }
+    
+    @IBAction func onGeoTag(_ sender: Any) {
+        self.performSegue(withIdentifier: "captureToMapSegue", sender: self)
+        
+    }
+    
+    
+    @IBAction func onSelect(_ sender: Any) {
+        self.performSegue(withIdentifier: "captureToMapSegue", sender: self)    }
+    
     
     /*
     // MARK: - Navigation

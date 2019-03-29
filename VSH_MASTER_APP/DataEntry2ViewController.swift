@@ -74,10 +74,11 @@ class DataEntry2ViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! DataCollectionViewController
-        vc.stopNameSelection = selectedStop!
-        print(selectedStop ?? "error 2 view")
-        
+        if(segue.destination is DataCollectionViewController){
+            let vc = segue.destination as! DataCollectionViewController
+            vc.stopNameSelection = selectedStop!
+            print(selectedStop ?? "error 2 view")
+        }
     }
     
     
