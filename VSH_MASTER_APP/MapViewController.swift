@@ -58,6 +58,26 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         print("location failed, \(error)")
     }
     
+    @IBAction func addPin(_ sender: UILongPressGestureRecognizer) {
+        
+        let location = sender.location(in: self.mapView)
+        
+        let locCoord = self.mapView.convert(location, toCoordinateFrom: self.mapView)
+        
+        let annotation = MKPointAnnotation()
+        
+        annotation.coordinate = locCoord
+        annotation.title = "Place"
+        annotation.subtitle = "Location of Place"
+        
+        print(locCoord)
+        
+        //self.mapView.removeAnnotations(mapView.annotations)
+        
+        self.mapView.addAnnotation(annotation)
+        
+        
+    }
     /*func locationManager(_ manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
         print("got location\(newLocation.coordinate.latitude) , \(newLocation.coordinate.longitude)")
     }*/
@@ -93,8 +113,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         
     }*/
+    /*func annotations(in mapRect: MKMapRect) -> [MKAnnotation] {
+        
+        
+    }*/
     
     @IBAction func onCaptureGeo(_ sender: Any) {
+        
+        
         self.performSegue(withIdentifier: "mapToPreviewSegue", sender: self)
         
     }

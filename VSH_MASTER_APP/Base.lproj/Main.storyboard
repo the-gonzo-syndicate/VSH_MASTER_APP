@@ -311,7 +311,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6r-gr-4NW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6Wp-EN-A1H"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6Wp-EN-A1H">
+                    <connections>
+                        <action selector="addPin:" destination="mH4-Xt-4SE" id="tG5-Pu-vHG"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3640.8000000000002" y="136.28185907046478"/>
         </scene>
@@ -404,7 +408,7 @@
         <image name="cameraPlaceholder" width="82.319999694824219" height="61"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ch9-HT-hVs"/>
+        <segue reference="Ta6-Ie-cPg"/>
         <segue reference="HI2-Bh-dbE"/>
         <segue reference="I35-Wg-fVL"/>
     </inferredMetricsTieBreakers>
