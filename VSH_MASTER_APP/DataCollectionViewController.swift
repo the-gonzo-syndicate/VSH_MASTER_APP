@@ -64,10 +64,6 @@ class DataCollectionViewController: UIViewController, UIImagePickerControllerDel
         
     }
     
-    @IBAction func onGeoTag(_ sender: Any) {
-        self.performSegue(withIdentifier: "captureToMapSegue", sender: self)
-        
-    }
     
     
     @IBAction func onSelect(_ sender: Any) {

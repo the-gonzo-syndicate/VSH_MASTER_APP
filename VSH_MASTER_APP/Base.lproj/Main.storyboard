@@ -272,9 +272,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jFn-me-v5F">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="hybrid" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jFn-me-v5F">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="528"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6Wp-EN-A1H" appends="YES" id="CjZ-lX-NJr"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPm-ap-bq9">
                                 <rect key="frame" x="114" y="558" width="146" height="30"/>
@@ -302,8 +306,12 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vi2-fj-Hv3"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="jFn-me-v5F" id="hkU-t9-vAn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6r-gr-4NW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6Wp-EN-A1H"/>
             </objects>
             <point key="canvasLocation" x="3640.8000000000002" y="136.28185907046478"/>
         </scene>
@@ -393,10 +401,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cameraPlaceholder" width="343" height="254"/>
+        <image name="cameraPlaceholder" width="82.319999694824219" height="61"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ta6-Ie-cPg"/>
+        <segue reference="ch9-HT-hVs"/>
         <segue reference="HI2-Bh-dbE"/>
         <segue reference="I35-Wg-fVL"/>
     </inferredMetricsTieBreakers>
