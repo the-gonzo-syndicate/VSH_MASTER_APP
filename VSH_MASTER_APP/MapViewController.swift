@@ -14,12 +14,16 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     var locationManager = CLLocationManager()
+    var geoPointArray = [PFGeoPoint]()
     
+    var selectedStop = PFObject?.self
+    var stopNameSelection = PFObject?.self
     
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
         locationManager.delegate = self
@@ -69,6 +73,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         annotation.coordinate = locCoord
         annotation.title = "Place"
         annotation.subtitle = "Location of Place"
+        
+        let point = PFGeoPoint(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+        geoPointArray.append(point)
         
         print(locCoord)
         
@@ -130,7 +137,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         self.performSegue(withIdentifier: "mapToCollectionSegue", sender: self)
         
     }
-    /*
+    
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.destination is PreviewViewController){
+            let vc = segue.destination as! PreviewViewController
+            vc.selectedStop = stopNameSelection
+            print(stopNameSelection ?? "error 2 view")
+        }
+    }*/    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

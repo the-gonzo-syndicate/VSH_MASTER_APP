@@ -13,6 +13,7 @@ import AlamofireImage
 
 class PreviewViewController: UIViewController {
 
+    //selectedStop = PFObject?
     
     @IBOutlet weak var previewImageView: UIImageView!
     
@@ -31,6 +32,8 @@ class PreviewViewController: UIViewController {
         self.performSegue(withIdentifier: "previewToHuntSegue", sender: self)
         
     }
+    
+    
     /*
     // MARK: - Navigation
 

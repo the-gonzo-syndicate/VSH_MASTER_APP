@@ -13,8 +13,10 @@ import Parse
 class DataCollectionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
-    var stopNameSelection = ""
     
+    
+    //var stopNameSelection = ""
+    var stopNameSelection = PFObject()
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -28,9 +30,9 @@ class DataCollectionViewController: UIViewController, UIImagePickerControllerDel
     
 
     
-    @IBAction func onPreview(_ sender: Any) {
-        self.performSegue(withIdentifier: "captureToPreviewSegue", sender: self)
-    }
+    //@IBAction func onPreview(_ sender: Any) {
+    //    self.performSegue(withIdentifier: "captureToPreviewSegue", sender: self)
+    //}
     
     
     @IBAction func onCameraButton(_ sender: Any) {
@@ -67,9 +69,19 @@ class DataCollectionViewController: UIViewController, UIImagePickerControllerDel
     
     
     @IBAction func onSelect(_ sender: Any) {
-        self.performSegue(withIdentifier: "captureToMapSegue", sender: self)    }
+        
+        
+        self.performSegue(withIdentifier: "captureToMapSegue", sender: self)
+        
+    }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.destination is MapViewController){
+            let vc = segue.destination as! MapViewController
+            //vc.selectedStop = stopNameSelection      PROBLEM HERE
+            print(stopNameSelection ?? "error 2 view")
+        }
+    }
     /*
     // MARK: - Navigation
 

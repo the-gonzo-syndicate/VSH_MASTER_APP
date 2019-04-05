@@ -405,11 +405,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cameraPlaceholder" width="82.319999694824219" height="61"/>
+        <image name="cameraPlaceholder" width="343" height="254"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ta6-Ie-cPg"/>
+        <segue reference="t0t-mu-Tcu"/>
+        <segue reference="ch9-HT-hVs"/>
         <segue reference="HI2-Bh-dbE"/>
-        <segue reference="I35-Wg-fVL"/>
+        <segue reference="j2v-SD-OnO"/>
     </inferredMetricsTieBreakers>
 </document>
