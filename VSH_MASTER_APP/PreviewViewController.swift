@@ -13,22 +13,58 @@ import AlamofireImage
 
 class PreviewViewController: UIViewController {
 
-    //selectedStop = PFObject?
     
-    @IBOutlet weak var previewImageView: UIImageView!
+    var pvCatchObj = PFObject(className:"Stops")
     
     @IBOutlet weak var stopNameLabel: UILabel!
     
+    @IBOutlet weak var imageCollectedLabel: UILabel!
     @IBOutlet weak var coordsCollectedLabel: UILabel!
+    
+    
+    @IBOutlet weak var bioTextfield: UITextField!
+    
+    @IBOutlet weak var pointsTextfield: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        stopNameLabel.text = pvCatchObj["stopName"] as? String
+        
+        //print(pvCatchObj["stopCoords"])
+        
+        if pvCatchObj["stopImg"] != nil {
+            imageCollectedLabel.text = "Yes"
+        }
+        print(pvCatchObj["stopCoords"])
+        if pvCatchObj["stopCoords"] != nil {
+            coordsCollectedLabel.text = "Yes"
+        }
 
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func onConfirm(_ sender: Any) {
+        
+        pvCatchObj["stopBio"] = bioTextfield.text
+        
+        pvCatchObj["stopPointVal"] = pointsTextfield.text as? Int
+        
+        pvCatchObj.saveInBackground { (success, error) in
+            if success {
+                print("saved!")
+            } else {
+                print("error saving...")
+            }
+        }
+        
+        
+        
+        
+        
         self.performSegue(withIdentifier: "previewToHuntSegue", sender: self)
         
     }

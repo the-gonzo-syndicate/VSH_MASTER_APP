@@ -13,8 +13,10 @@ class DataEntry2ViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     var stops = [PFObject]()
     
-    //var selectedStop: String?
-    var selectedStop: PFObject!
+    var selectedStop: String?
+    //var selectedStop: PFObject!
+    
+    var de2ThrowObj = PFObject(className:"Stops")
     
     var huntNameSelection = ""
     
@@ -60,14 +62,16 @@ class DataEntry2ViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         
         stopPickerView.setValue(UIColor.white, forKey: "textColor")
-        selectedStop = stops[row]//["stopName"] as? String
+        selectedStop = stops[row]["stopName"] as? String
+        //de2ThrowObj = stops[row]["stopName"] as? String
         
         return stops[row]["stopName"] as? String
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedStop = stops[row] as! PFObject
-        print(selectedStop ?? "error 2 view")
+        //selectedStop = stops[row] as! PFObject
+        de2ThrowObj = stops[row] //as! PFObject  WORKING HERE
+        //print(selectedStop ?? "error 2 view")
     }
     
     @IBAction func onSelect(_ sender: Any) {
@@ -77,8 +81,8 @@ class DataEntry2ViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.destination is DataCollectionViewController){
             let vc = segue.destination as! DataCollectionViewController
-            //vc.stopNameSelection = selectedStop      PROBLEM HERE
-            print(selectedStop ?? "error 2 view")
+            vc.dcCatchObj = de2ThrowObj
+            //print(selectedStop ?? "error 2 view")
         }
     }
     

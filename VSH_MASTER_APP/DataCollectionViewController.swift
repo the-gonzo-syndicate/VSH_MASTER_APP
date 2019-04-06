@@ -16,7 +16,8 @@ class DataCollectionViewController: UIViewController, UIImagePickerControllerDel
     
     
     //var stopNameSelection = ""
-    var stopNameSelection = PFObject()
+    //var stopNameSelection = PFObject()
+    var dcCatchObj = PFObject(className:"Stops")
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -70,6 +71,11 @@ class DataCollectionViewController: UIViewController, UIImagePickerControllerDel
     
     @IBAction func onSelect(_ sender: Any) {
         
+        let imageData = imageView.image!.pngData()
+        let file = PFFileObject(data: imageData!)
+        
+        dcCatchObj["stopImg"] = file
+        
         
         self.performSegue(withIdentifier: "captureToMapSegue", sender: self)
         
@@ -78,8 +84,8 @@ class DataCollectionViewController: UIViewController, UIImagePickerControllerDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.destination is MapViewController){
             let vc = segue.destination as! MapViewController
-            //vc.selectedStop = stopNameSelection      PROBLEM HERE
-            print(stopNameSelection ?? "error 2 view")
+            vc.mvCatchObj = dcCatchObj
+            //print(stopNameSelection ?? "error 2 view")
         }
     }
     /*

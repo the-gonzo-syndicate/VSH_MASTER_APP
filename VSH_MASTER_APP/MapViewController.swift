@@ -16,9 +16,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     var geoPointArray = [PFGeoPoint]()
     
-    var selectedStop = PFObject?.self
-    var stopNameSelection = PFObject?.self
+    //var selectedStop = PFObject?.self
+    //var stopNameSelection = PFObject?.self
     
+    var mvCatchObj = PFObject(className:"Stops")
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -77,6 +78,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let point = PFGeoPoint(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
         geoPointArray.append(point)
         
+        
+        
         print(locCoord)
         
         //self.mapView.removeAnnotations(mapView.annotations)
@@ -127,6 +130,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func onCaptureGeo(_ sender: Any) {
         
+        let polygon = PFPolygon(coordinates: geoPointArray)
+        mvCatchObj["stopCoords"] = polygon
         
         self.performSegue(withIdentifier: "mapToPreviewSegue", sender: self)
         
@@ -138,13 +143,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.destination is PreviewViewController){
             let vc = segue.destination as! PreviewViewController
-            vc.selectedStop = stopNameSelection
-            print(stopNameSelection ?? "error 2 view")
+            vc.pvCatchObj = mvCatchObj
+            //print(stopNameSelection ?? "error 2 view")
         }
-    }*/    /*
+    }    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
