@@ -11,30 +11,20 @@ import Parse
 
 class DataEntryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
-    
-    
-    
     @IBOutlet weak var huntPicker: UIPickerView!
-    
     
     var hunts = [PFObject]()
     
     var selectedHunt: String?
-    
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         huntPicker.delegate = self
         huntPicker.dataSource = self
         huntPicker.setValue(UIColor.white, forKey: "textColor")
-        // Do any additional setup after loading the view.
+        
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -46,7 +36,7 @@ class DataEntryViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             if hunts != nil {
                 self.hunts = hunts!
                 self.huntPicker.reloadAllComponents()
-                print(hunts)
+                //print(hunts)
             }
             self.huntPicker.reloadAllComponents()
         }
@@ -59,27 +49,16 @@ class DataEntryViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         return hunts.count
     }
     
-    
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        
-        //huntPicker.setValue(UIColor.white, forKey: "textColor")
         selectedHunt = hunts[row]["huntName"] as? String
         
         return hunts[row]["huntName"] as? String
     }
-    
-    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //    if segue.destination is DataEntry2ViewController {
-    //        let searchedHunt = segue.destination as? DataEntry2ViewController
-    //        searchedHunt.name = hunts[row]["huntName"] as? String
-    //    }
-    //}
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedHunt = hunts[row]["huntName"] as? String
     }
-    
     
     @IBAction func onSelect(_ sender: Any) {
         
@@ -91,16 +70,4 @@ class DataEntryViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         vc.huntNameSelection = selectedHunt!
         
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

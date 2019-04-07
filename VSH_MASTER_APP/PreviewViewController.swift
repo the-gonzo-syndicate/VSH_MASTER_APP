@@ -13,19 +13,15 @@ import AlamofireImage
 
 class PreviewViewController: UIViewController {
 
-    
     var pvCatchObj = PFObject(className:"Stops")
     
     @IBOutlet weak var stopNameLabel: UILabel!
     
     @IBOutlet weak var imageCollectedLabel: UILabel!
+    
     @IBOutlet weak var coordsCollectedLabel: UILabel!
     
-    
     @IBOutlet weak var bioTextfield: UITextField!
-    
-    @IBOutlet weak var pointsTextfield: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,25 +29,20 @@ class PreviewViewController: UIViewController {
         
         stopNameLabel.text = pvCatchObj["stopName"] as? String
         
-        //print(pvCatchObj["stopCoords"])
-        
-        if pvCatchObj["stopImg"] != nil {
+        if pvCatchObj["stopImg"] != nil { // THESE ARE NOT WORKING
             imageCollectedLabel.text = "Yes"
         }
-        print(pvCatchObj["stopCoords"])
+
         if pvCatchObj["stopCoords"] != nil {
             coordsCollectedLabel.text = "Yes"
         }
-
-        // Do any additional setup after loading the view.
     }
     
-
     @IBAction func onConfirm(_ sender: Any) {
         
         pvCatchObj["stopBio"] = bioTextfield.text
         
-        pvCatchObj["stopPointVal"] = pointsTextfield.text as? Int
+        pvCatchObj["stopPointVal"] = 5
         
         pvCatchObj.saveInBackground { (success, error) in
             if success {
@@ -61,23 +52,7 @@ class PreviewViewController: UIViewController {
             }
         }
         
-        
-        
-        
-        
         self.performSegue(withIdentifier: "previewToHuntSegue", sender: self)
         
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
